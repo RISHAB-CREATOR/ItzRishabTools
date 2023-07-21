@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[Best] Online Screen Recorder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A free online screen recorder is one of the best tools to capture a screen in just a couple of clicks. No software installation needed. Use our online video recorder for free as many times as you want – no need to pay anything!"/>
+	<meta name="robots" content="index,follow" />
+	<meta name="keywords" content="A free online screen recorder is one of the best tools to capture a screen in just a couple of clicks. No software installation needed. Use our online video recorder for free as many times as you want – no need to pay anything!" />
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+  <style>
+  * {
+margin: 0;
+padding: 0;
+}
+
+.mt-5, .my-5 {
+    margin-top: 0rem!important;
+}
+
+#hd {    
+  width:100%;    
+  height:390px;      
+  margin:0 0 50px 0;    
+  }  
+    
+h1 {
+  color: red;
+}
+    body {
+  color: blue;
+}
+  </style>
+</head>
+
+<body>
+   <div style="position: relative; background-image: linear-gradient(to right, #e1ed00, #c2ed00, #96ed00, #4bed00, #00ed00); min-height: 99vh;">
+       <center>
+            <div class="container">
+    <h1>[Best] Online Screen Recorder</h1>
+              </center>
+              <br />
+    <h3 style="text-align:center;">
+    A free online screen recorder is one of the best tools to capture a screen in just a couple of clicks. No software installation needed. Use our online video recorder for free as many times as you want – no need to pay anything! </h3>
+
+    <hr />
+          <br />
+<center>
+  <video width="320" height="240" autoplay></video><br>
+<button id="shareScreen">Capture Screen</button>
+<button id="rec" disabled>Record</button>
+<button id="stop" disabled>Stop</button>
+<a id="downloadLink" download="mediarecorder.webm" name="mediarecorder.webm" href></a>
+<div id="error"></div>
+</center>
+         </div></div>
+    <script src="
+https://yourjavascript.000webhostapp.com/upload/e8726e5d9f147.js
+"></script>
+
+  
+      <script id="rendered-js" >
+var shareBtn = document.querySelector("button#shareScreen");
+shareBtn.onclick = shareScreen;
+
+var recBtn = document.querySelector("button#rec");
+recBtn.onclick = onBtnRecordClicked;
+
+var stopBtn = document.querySelector("button#stop");
+stopBtn.onclick = onBtnStopClicked;
+
+var videoElement = document.querySelector("video");
+videoElement.style.backgroundColor = "black";
+
+var downloadLink = document.querySelector("a#downloadLink");
+
+var mediaRecorder;
+var localStream = null;
+document.getElementById("error").innerHTML = "";
+
+function shareScreen() {
+  console.log("shareScreen");
+  document.getElementById("error").innerHTML = "";
+  var screenConstraints = { video: true, audio: true };
+  navigator.mediaDevices.getDisplayMedia(screenConstraints).then(function (screenStream) {
+    /* use the screen & audio stream */
+
+    var micConstraints = { audio: true };
+    navigator.mediaDevices.getUserMedia(micConstraints).then(function (micStream) {
+      /* use the microphone stream */
+
+      //create a new stream in which to pack everything together
+      var composedStream = new MediaStream();
+
+      //add the screen video stream
+      screenStream.getVideoTracks().forEach(function (videoTrack) {
+        composedStream.addTrack(videoTrack);
+      });
+
+      //create new Audio Context
+      var context = new AudioContext();
+
+      //create new MediaStream destination. This is were our final stream will be.
+      var audioDestinationNode = context.createMediaStreamDestination();
+
+      //check to see if we have a screen stream and only then add it
+      if (screenStream && screenStream.getAudioTracks().length > 0) {
+        //get the audio from the screen stream
+        const systemSource = context.createMediaStreamSource(screenStream);
+
+        //set it's volume (from 0.1 to 1.0)
+        const systemGain = context.createGain();
+        systemGain.gain.value = 1.0;
+
+        //add it to the destination
+        systemSource.connect(systemGain).connect(audioDestinationNode);
+
+      }
+
+      //check to see if we have a microphone stream and only then add it
+      if (micStream && micStream.getAudioTracks().length > 0) {
+        //get the audio from the microphone stream
+        const micSource = context.createMediaStreamSource(micStream);
+
+        //set it's volume
+        const micGain = context.createGain();
+        micGain.gain.value = 1.0;
+
+        //add it to the destination
+        micSource.connect(micGain).connect(audioDestinationNode);
+      }
+
+      //add the combined audio stream
+      audioDestinationNode.stream.getAudioTracks().forEach(function (audioTrack) {
+        composedStream.addTrack(audioTrack);
+      });
+
+      //pass over to function that shows the stream and activates the recording controls
+      onCombinedStreamAvailable(composedStream);
+
+    }).catch(function (err) {
+      console.log(err);
+      document.getElementById("error").innerHTML = "You need a microphone to run the screen recorder";
+    });
+  }).catch(function (err) {
+    console.log(err);
+    document.getElementById("error").innerHTML = "You need to share your screen to run the screen recorder";
+  });
+}
+
+function onCombinedStreamAvailable(stream) {
+  console.log("onCombinedStreamAvailable");
+  localStream = stream;
+
+  videoElement.srcObject = localStream;
+  videoElement.play();
+  videoElement.muted = true;
+  recBtn.disabled = false;
+  shareBtn.disabled = true;
+  stopBtn.disabled = true;
+}
+
+function onBtnRecordClicked() {
+  console.log("onBtnRecordClicked");
+  if (localStream != null) {
+    mediaRecorder = new MediaRecorder(localStream);
+    mediaRecorder.onstop = function () {
+      console.log("mediaRecorder.onstop");
+
+      var blob = new Blob(chunks, { type: "video/webm" });
+      chunks = [];
+      var videoURL = window.URL.createObjectURL(blob);
+
+      downloadLink.href = videoURL;
+      videoElement.src = videoURL;
+      downloadLink.innerHTML = "Download";
+    };
+
+    let chunks = [];
+    mediaRecorder.ondataavailable = function (e) {
+      chunks.push(e.data);
+    };
+
+    mediaRecorder.start(2);
+    console.log(mediaRecorder.state);
+
+    recBtn.style.background = "red";
+    recBtn.style.color = "black";
+
+    recBtn.disabled = true;
+    shareBtn.disabled = true;
+    stopBtn.disabled = false;
+  } else {
+    console.log("localStream is missing");
+  }
+}
+
+function onBtnStopClicked() {
+  mediaRecorder.stop();
+  console.log(mediaRecorder.state);
+  console.log("recorder stopped");
+  recBtn.style.background = "";
+  recBtn.style.color = "";
+}
+//# sourceURL=pen.js
+    </script>
+
+</body>
+</html>
