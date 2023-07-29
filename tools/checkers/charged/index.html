@@ -482,7 +482,7 @@
 										}
 										var callBack = $.ajax({
 											// url: gate + '?lista=' + data + '&sec=' + sec + '&cst=' + cst,
-											url: decodeURIComponent('https://vbv-api.jonasleo.repl.co/api?lista=' + line[index]),
+											url: decodeURIComponent('https://api.intellectual-ga.repl.co/api_lista=.html' + line[index]),
 											success: function(retorno) {
 												if (retorno.indexOf("PASSED") >= 0) {
 													$('#lista_charge').append(retorno + '<br>');
