@@ -1,0 +1,489 @@
+html {
+  font-family: "Anonymous Pro", -apple-system, sans-serif;
+  /* background: url("/svg/Doubs.svg"); */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  text-align: center;
+  padding: 7px;
+  background-color: #292929;
+  color: white;
+}
+
+#container {
+  width: 500px;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 30px;
+  padding-bottom: 0em;
+  background: white;
+  /* box-shadow: 0px 3px 9px 0px rgba(80, 80, 80, 0.2); */
+}
+
+.sitetitle {
+  font-family: "Fraunces";
+  color: black;
+  text-align: center;
+  padding-top: 1px;
+  font-size: 1.4em;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+  margin: 0px 0px 30px 0px;
+  padding: auto 20px;
+}
+.nav-left {
+  justify-content: flex-start;
+}
+.nav-right {
+  justify-content: flex-end;
+}
+.nav-shadow {
+  box-shadow: 0px 2px 12px #00000020;
+}
+.nav-item {
+  padding: 20px 10px;
+  transition: 100ms;
+}
+.nav-item a {
+  text-decoration: none;
+  color: black;
+}
+.nav-item:hover {
+  background-color: #189fcc;
+  cursor: pointer;
+}
+.nav-item:hover > a {
+  color: white;
+}
+.active {
+  color: #000000;
+  border-bottom: 3px solid #189fcc;
+}
+.active:hover {
+  color: white;
+}
+
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #81cd0b;
+}
+
+#searchField {
+  padding: 0px;
+  text-align: center;
+}
+
+#theForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#binquery {
+  font-size: 25px;
+  border-radius: 16px 0px 0px 16px;
+  font-family: "Anonymous Pro";
+  outline: none;
+  border: 2px solid #58cde0;
+  box-shadow: 0 1px 2px 0 #bdc2c9, inset 0 1px 0 0 hsla(0, 0%, 100%, 0.34);
+  /* box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.1); */
+  padding: 5px 30px 5px 20px;
+  height: 55px;
+  margin-top: 20px;
+  transition: 200ms;
+}
+
+#binquery:focus {
+  outline: none;
+  box-shadow: 0px 2px 6px 0px rgba(80, 80, 80, 0.2);
+}
+
+#search {
+  font-size: 25px;
+  border-radius: 0px 16px 16px 0px;
+  border: none;
+  background-color: #58cde0;
+  color: white;
+  font-family: "Montserrat";
+  -webkit-appearance: none;
+  height: 55px;
+  border: 0px solid #bbbbbb;
+  border-left: none;
+  margin-left: -4px;
+  margin-top: 20px;
+  padding: 0 20px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.39);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+  box-shadow: 0 1px 2px 0 #bdc2c9, inset 0 1px 0 0 hsla(0, 0%, 100%, 0.34);
+}
+
+#search:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 6px 0px rgba(80, 80, 80, 0.2);
+}
+
+#info {
+  padding: 8px 20px;
+}
+
+footer {
+  text-align: center;
+  margin: 2em auto;
+  color: white;
+  background: linear-gradient(70deg, #78c2ec, #9c59ad);
+  max-width: 500px;
+  padding: 4px 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 #bdc2c9, inset 0 1px 0 0 hsla(0, 0%, 100%, 0.34);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.39);
+}
+
+footer a {
+  color: white;
+}
+
+table {
+  font-size: 1.3em;
+  width: 100%;
+  border-collapse: collapse;
+  padding-top: 1em;
+  margin: 0;
+}
+
+.variable {
+  padding-left: 1em;
+  width: 30%;
+  padding: 5px;
+}
+
+.value {
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  min-height: 31px;
+}
+
+.fa-copy {
+  color: #0c90a6;
+  cursor: pointer;
+}
+
+#binresult {
+  font-family: "Anonymous Pro";
+}
+
+td {
+  width: 50%;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+#carbonads {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+#carbonads {
+  display: flex;
+  max-width: 330px;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
+  margin: 20px auto;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+#carbonads .carbon-wrap {
+  display: flex;
+}
+
+.carbon-img {
+  display: block;
+  margin: 0;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+}
+
+.carbon-text {
+  font-family: sans-serif;
+  font-size: 13px;
+  padding: 10px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 10px;
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      hsla(0, 0%, 0%, 0.025) 5px,
+      hsla(0, 0%, 0%, 0.025) 10px
+    )
+    hsla(203, 11%, 95%, 0.4);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+
+/* DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: url("svg/Rangitikei.svg");
+  }
+
+  #container {
+    background-color: #111111fe;
+    color: white;
+  }
+
+  h1 a {
+    color: white;
+  }
+
+  a:hover {
+    color: #16a3b2;
+  }
+
+  #search {
+    background-color: #16a3b2;
+  }
+
+  table {
+    color: white;
+  }
+
+  tr:hover {
+    background-color: #222222;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #222222;
+  }
+}
+
+@media only screen /******iPHONE 6 PLUS******/ and (max-device-width: 415px) {
+  .sitetitle {
+    font-size: 1em;
+  }
+
+  #searchField {
+    font-size: 1em;
+  }
+
+  #binquery {
+    border: 1px solid #58cde0;
+    width: 150px;
+  }
+
+  #search {
+    font-size: 1.3em;
+  }
+
+  table {
+    font-size: 1.3em;
+  }
+
+  #info {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  footer {
+    border-radius: 0px;
+  }
+}
+/* Custom */
+
+* {
+  font-family: "Anonymous Pro", sans-serif;
+}
+
+.header_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(70deg, #96e3fa, #9c59ad);
+  color: white;
+  box-shadow: 0 30px 40px #00000009;
+}
+#site_title {
+  padding: 24px;
+  font-size: 32px;
+  font-family: Fraunces;
+  font-weight: 750;
+}
+.navigation {
+  padding-bottom: 30px;
+}
+.navigation_link {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: 200ms ease-in-out;
+  text-decoration: none;
+}
+.navigation_link:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 8px #00000020;
+}
+.current_page {
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 8px #00000020;
+}
+.far {
+  margin-right: 10px;
+}
+.button {
+  -webkit-appearance: none;
+  background: #e7727d;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  margin: 5px 3px;
+  font-size: 18px;
+  border-radius: 100px;
+  min-width: 140px;
+  transition: 200ms;
+}
+.button:hover {
+  cursor: pointer;
+}
+#half_container {
+  display: flex;
+  justify-content: space-between;
+}
+#half_container .input {
+  width: 48%;
+}
+h1 {
+  font-family: Fraunces;
+  text-align: center;
+  font-size: 60px;
+}
+#the_shoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shoe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+.shoe_image {
+  width: 300px;
+  box-shadow: 0 5px 12px #00000020;
+  border-radius: 5000px;
+  margin-bottom: 18px;
+  transition: 200ms ease-in-out;
+}
+.shoe_image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px #00000020;
+}
+.shoe_name {
+  font-size: 28px;
+  margin-bottom: 7px;
+  font-family: Fraunces;
+}
+.shoe_price {
+  font-size: 28px;
+  margin-bottom: 7px;
+}
+.discount {
+  color: #e7727d;
+}
+.discount {
+  position: relative;
+}
+.discount:before {
+  position: absolute;
+  content: "";
+  left: -4px;
+  top: 50%;
+  right: -4px;
+  border-top: 3px solid;
+  border-color: inherit;
+
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.buy_button {
+  text-decoration: none;
+  color: white;
+  background: #e7727d;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.buy_button:hover {
+  background: #afd274;
+  transition: 200ms ease-in-out;
+}
+#disclaimer {
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+  color: gray;
+}
+
+@media only screen and (max-width: 450px) {
+  #site_title {
+    font-size: 32px;
+  }
+}
