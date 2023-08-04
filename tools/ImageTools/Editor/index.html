@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Image Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <nav class="navbar navbar-dark bg-info mb-5">
+    <div class="container">
+      <a href="#" class="navbar-brand">Image editior</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 m-auto">
+        <div class="option">
+          <div class="save">
+            <div class="revert">
+              <button id="revert-btn" class="filter-btn revert-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <g fill="currentColor" fill-rule="nonzero">
+                    <path
+                      d="M6.036 13.418L4.49 11.872A.938.938 0 1 0 3.163 13.2l2.21 2.209a.938.938 0 0 0 1.326 0l2.209-2.21a.938.938 0 0 0-1.327-1.326l-1.545 1.546zM12 10.216a1 1 0 0 1 2 0V13a1 1 0 0 1-2 0v-2.784z">
+                    </path>
+                    <path d="M15.707 14.293a1 1 0 0 1-1.414 1.414l-2-2a1 1 0 0 1 1.414-1.414l2 2z"></path>
+                    <path
+                      d="M8.084 19.312a1 1 0 0 1 1.23-1.577 6 6 0 1 0-2.185-3.488 1 1 0 0 1-1.956.412 8 8 0 1 1 2.912 4.653z">
+                    </path>
+                  </g>
+                </svg>
+                Remove Filters</button>
+            </div>
+            <div class="down">
+              <button id="download-btn" class="download" type="button" style="opacity: 1;">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <polyline fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="front">Done</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="frame">
+          <div class="center">
+            <div class="tabs">
+              <div class="top"></div>
+              <input type="radio" id="tab-1" name="rd" checked="checked" />
+              <label class="tab" for="tab-1">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M23 17H9a2 2 0 0 1-2-2v-5m0-3V1"></path>
+                    <path d="M1 7h14a2 2 0 0 1 2 2v7m0 4v3"></path>
+                  </g>
+                </svg>
+              </label>
+              <input type="radio" id="tab-2" name="rd" />
+              <label class="tab" for="tab-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18.347 9.907a6.5 6.5 0 1 0-1.872 3.306M3.26 11.574a6.5 6.5 0 1 0 2.815-1.417"></path>
+                    <path d="M10.15 17.897A6.503 6.503 0 0 0 16.5 23a6.5 6.5 0 1 0-6.183-8.51"></path>
+                  </g>
+                </svg>
+              </label>
+              <input type="radio" id="tab-3" name="rd" />
+              <label class="tab" for="tab-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 1v5.5m0 3.503V23M12 1v10.5m0 3.5v8M20 1v15.5m0 3.5v3M2 7h4M10 12h4M18 17h4"></path>
+                  </g>
+                </svg>
+              </label>
+              <div class="content">
+                <div class="box " id="box-1">
+                  <div class="d-flex justify-content-around">
+                    <div class="col-md-3">
+                      <button class="rotate-btn btn btn-dark btn-block size" id="flipH">
+                        <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true" focusable="false">
+                          <g fill="currentColor" fill-rule="evenodd">
+                            <path
+                              d="M11.93 7.007V20a1 1 0 0 1-1 1H5.78a1 1 0 0 1-.93-1.368l5.15-12.993a1 1 0 0 1 1.929.368z">
+                            </path>
+                            <path
+                              d="M14 7.007V20a1 1 0 0 0 1 1h5.149a1 1 0 0 0 .93-1.368l-5.15-12.993A1 1 0 0 0 14 7.007z"
+                              opacity=".6"></path>
+                          </g>
+                        </svg>
+                        Flip horizontal
+                      </button>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="rotate-btn btn btn-dark btn-block size" id="flipV"><svg width="26" height="26"
+                          viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                          <g fill="currentColor" fill-rule="evenodd">
+                            <path
+                              d="M19.993 12.143H7a1 1 0 0 1-1-1V5.994a1 1 0 0 1 1.368-.93l12.993 5.15a1 1 0 0 1-.368 1.93z">
+                            </path>
+                            <path
+                              d="M19.993 14a1 1 0 0 1 .368 1.93L7.368 21.078A1 1 0 0 1 6 20.148V15a1 1 0 0 1 1-1h12.993z"
+                              opacity=".6"></path>
+                          </g>
+                        </svg>
+                        Flip vertical
+                      </button>
+                      </button>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="rotate-btn btn btn-dark btn-block size" id="rotate"><svg width="26" height="26"
+                          viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                          <g transform="translate(3 2)" fill="currentColor" fill-rule="evenodd" class="doka--icon-turn">
+                            <rect y="11" width="12" height="10" rx="1"></rect>
+                            <path
+                              d="M9.823 5H11a5 5 0 0 1 5 5 1 1 0 0 0 2 0 7 7 0 0 0-7-7H9.626l.747-.747A1 1 0 0 0 8.958.84L6.603 3.194a1 1 0 0 0 0 1.415l2.355 2.355a1 1 0 0 0 1.415-1.414L9.823 5z"
+                              fill-rule="nonzero"></path>
+                          </g>
+                        </svg>
+                        Rotate
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="box-2">
+                  <div class="scrollmenu">
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn vintage-add btn btn-dark btn-block">
+                        Vintage
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn lomo-add btn btn-dark btn-block">
+                        Lomo
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn clarity-add btn btn-dark btn-block">
+                        Clarity
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn sincity-add btn btn-dark btn-block">
+                        Sin City
+                      </button>
+                    </div>
+
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn crossprocess-add btn btn-dark btn-block">
+                        Cross Process
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn pinhole-add btn btn-dark btn-block">
+                        Pinhole
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn nostalgia-add btn btn-dark btn-block">
+                        Nostalgia
+                      </button>
+                    </div>
+                    <div class="col-md-3 card w-auto">
+                      <button class="filter-btn hermajesty-add btn btn-dark btn-block">
+                        Her Majesty
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="box" id="box-3">
+                  <div class="d-flex color justify-content-around">
+                    <div class="align-self-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" focusable="false">
+                        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="7"></circle>
+                          <line x1="12" y1="1" x2="12" y2="3"></line>
+                          <line x1="12" y1="21" x2="12" y2="23"></line>
+                          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                          <line x1="1" y1="12" x2="3" y2="12"></line>
+                          <line x1="21" y1="12" x2="23" y2="12"></line>
+                          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </g>
+                      </svg>
+                      <label for="bright"> Brightness</label>
+                      <input id="bright" name="bright" type="range" min="1" max="20" value="5">
+                    </div>
+                    <div class="align-self-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" focusable="false">
+                        <g fill="none" fill-rule="evenodd">
+                          <circle stroke="currentColor" stroke-width="3" cx="12" cy="12" r="10"></circle>
+                          <path d="M12 2v20C6.477 22 2 17.523 2 12S6.477 2 12 2z" fill="currentColor"></path>
+                        </g>
+                      </svg>
+                      <label for="contrast">Contrast</label>
+                      <input id="contrast" name="contrast" type="range" min="-10" max="20" value="4">
+                    </div>
+                    <div class="align-self-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" focusable="false">
+                        <g fill="none" fill-rule="evenodd">
+                          <rect stroke="currentColor" stroke-width="3" x="2" y="2" width="20" height="20" rx="4"></rect>
+                          <path fill="currentColor" opacity=".3" d="M7 2.5h5v18.75H7z"></path>
+                          <path fill="currentColor" opacity=".6" d="M12 2.5h5v18.75h-5z"></path>
+                          <path fill="currentColor" opacity=".9" d="M17 2.5h4v18.75h-4z"></path>
+                        </g>
+                      </svg>
+                      <label for="saturation">Saturation</label>
+                      <input id="saturation" name="saturation" type="range" min="1" max="100" value="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="canvasconatainer">
+            <div class="center1">
+
+              <div class="title1">Drop file to upload</div>
+              <div class="dropzone">
+                <div class="content">
+                  <input type="file" class="custom-file-input" id="upload-file">
+                  <label for="upload-file"><img src="https://100dayscss.com/codepen/upload.svg" class="upload"></label>
+                  <label class="upload-btn" for="upload-file">Upload file</div>
+              </div>
+            </div>
+
+
+            <canvas id="canvas" style="max-width:100%;"></canvas>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js'></script>
+    <script src='https://100dayscss.com/codepen/js/jquery.min.js'></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
