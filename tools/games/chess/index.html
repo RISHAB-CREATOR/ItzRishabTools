@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="mobile-web-app-capable" content="yes">
+<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,minimal-ui">
+<title>Chess</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SX3SJWCLEY"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-SX3SJWCLEY');
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3324915803425189" crossorigin="anonymous"></script>
+<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { background: #000000; width: 100% !important; height: 100% !important; }
+
+		@font-face {
+			font-family: 'Calibri-Regular';
+			src: url('fonts/Calibri_gdi.woff') format('woff'),
+			url('fonts/Calibri_gdi.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		#canvas-wrapper {
+		    overflow: hidden;
+		    width: 100%;
+		    height: 100%;
+		    margin: 0;
+		    padding: 0;
+		    position: absolute;
+		}
+	</style>
+<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, false);
+
+	    // Package-ID
+	    window.famobi_gameID = "chess-classic";
+	    window.famobi_gameJS = [
+	    	"lib/iOS.js",
+	    	"lib/howler.js",
+	    	"lib/soundjs.min.js",
+	    	"Chess.js",
+	    	function(){
+	        	lime.embed ("openfl-content", 0, 0, "#58412F");
+	    	}
+	    ];
+
+	    (function (document, url, fgJS, firstJS) {
+	            fgJS = document.createElement('script');
+	            firstJS = document.getElementsByTagName('script')[0];
+	            fgJS.src = url + encodeURIComponent(document.location.href);
+	            firstJS.parentNode.insertBefore(fgJS, firstJS);
+	    })(document, 'html5games/gameapi/v1.js?e=');
+	</script>
+</head>
+<body>
+<div id="canvas-wrapper">
+<div id="openfl-content" style="background-color: #58412F;"></div>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f1e229baf029b2e","version":"2023.7.0","r":1,"token":"1646abcce58241b1aef359d9d36b339d","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
