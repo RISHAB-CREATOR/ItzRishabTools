@@ -2,11 +2,11 @@
 
 Welcome to ItzRishabTools, your one-stop destination for a variety of premium tools available for free! 🛠️✨
 
-## About
+## About ❓
 
 ItzRishabTools offers a diverse range of tools to enhance your online experience. From text conversion utilities to gaming sites, we've got you covered. Our tools are regularly updated to ensure you have access to the latest and greatest features.
 
-## Premium Tools
+## Premium Tools 🛠️
 
 1. **TextToPDF**
    - Convert your text documents into PDF format effortlessly.
@@ -58,18 +58,18 @@ ItzRishabTools offers a diverse range of tools to enhance your online experience
 
 ...and many more!
 
-## Regular Updates
+## Regular Updates ⭐
 
 We are committed to providing you with a seamless experience. Expect regular updates with new tools, improvements, and bug fixes to enhance your user experience.
 
-## How to Get Started
+## How to Get Started ✨
 
-1. **Accessing Tools**: Visit our website [www.itzrishabtools.com](https://www.itzrishabtools.com) to explore and use the wide array of tools available.
+1. **Accessing Tools**: Visit our website [itzrishabtools.me](https://itzrishabtools.me) to explore and use the wide array of tools available.
 
 2. **Updates**: Follow us on social media for announcements and updates.
 
-## Feedback
+## Feedback 🤝
 
-We value your feedback! If you have suggestions or encounter any issues, feel free to reach out to us at [support@itzrishabtools.com](mailto:support@itzrishabtools.com).
+We value your feedback! If you have suggestions or encounter any issues, feel free to reach out to us at [itzrishabboss@gmail.com](mailto:itzrishabboss@gmail.com).
 
 Thank you for choosing ItzRishabTools. Enjoy exploring and utilizing our premium tools! 🚀🔧
