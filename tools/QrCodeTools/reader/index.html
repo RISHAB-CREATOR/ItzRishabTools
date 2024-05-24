@@ -3,6 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>QR Code</title>
+        <link rel="preload stylesheet" href="../../../css/flash.css" as="style">
+        <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+        <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+        <script src="../../../js/blockIP.js"></script>
+        <script src="../../../js/logger.js"></script>
+        <script src="../../../js/nocheats.js"></script>
+        <script src="../../../js/smoothscroll.js"></script>
+        <script src="../../../js/jquery.js"></script>
 		<link rel='icon' href='icons/icon_64.png'>
 		<link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
 		<link href="../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -175,4 +184,9 @@
         };
         Vue.createApp(App).mount('#app')
     </script>
+    <script>
+        new kursor({
+          type: 1
+        })
+      </script> 
 </html>

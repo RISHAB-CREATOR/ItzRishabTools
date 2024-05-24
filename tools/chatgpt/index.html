@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -195,7 +196,13 @@
       }
       
       #chat-input {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
         flex: 1;
+        align-items: centre;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid #ccc;
@@ -221,6 +228,8 @@
         color: var(--text-color);
       }
     </style>
+    <link rel="preload stylesheet" href="../../css/flash.css" as="style">
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
   </head>
   <body>
     <!-- Chats container -->
@@ -232,9 +241,11 @@
         <div class="typing-textarea">
           <form class="input-box" method="get" action="">
             <select id="engine-select">
-              <option value="dfehub">RG</option>
+              <option value="dfehub">APJ AI</option>
             </select>
-            <textarea id="chat-input" spellcheck="false" placeholder="Type your message..." required></textarea>
+            <center>
+              <textarea id="chat-input" spellcheck="false" placeholder="Type your message..." required></textarea>
+            </center>
           </form>
         </div>
         <div class="typing-controls">
@@ -243,6 +254,24 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <script src="../../js/blockIP.js"></script>
+    <script src="../../js/logger.js"></script>
+    <script src="../../js/nocheats.js"></script>
+    <script src="../../js/smoothscroll.js"></script>
+    <script src="../../js/jquery.js"></script>
+    <script>
+      new kursor({
+        type: 1
+      })
+    </script>
+    <script>
+        new kursor({
+            type: 1
+        })
+    </script>
+    <script src="https://files.catbox.moe/wbt4t4.js"></script>
     <script>
       let isLightMode = false;
 
@@ -351,7 +380,7 @@
           const respText = await resp.text();
           return respText;
         } else if (model === "dfehub") {
-          url = `https://proxy.techzbots1.workers.dev/?u=https://chatgpt.apinepdev.workers.dev/?question=${prompt}`;
+          url = `https://corsproxy.notowner.workers.dev/?u=https://chatgpt.apinepdev.workers.dev/?question=${prompt}`;
 
           const resp = await fetch(url, {
             method: "GET",
@@ -434,7 +463,7 @@
         // Create user message element
         let userMessage = document.createElement("p");
         userMessage.classList.add("message", "user");
-        userMessage.innerText = "You: " + prompt;
+        userMessage.innerText = "You : " + prompt;
         chatContainer.appendChild(userMessage);
 
         let resp = await create(prompt, model);
@@ -442,7 +471,7 @@
         // Create bot message element
         let botMessage = document.createElement("p");
         botMessage.classList.add("message", "bot");
-        botMessage.innerText = "Bot: " + resp;
+        botMessage.innerText = "Bot : " + resp;
         chatContainer.appendChild(botMessage);
 
         document.getElementById("chat-input").value = ""; // Clear the input box
@@ -463,5 +492,6 @@
         toggleTheme();
       });
     </script>
-  </body>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"86766208fa31894a","r":1,"version":"2024.3.0","token":"3607476356d042feabcf985090327cd6"}' crossorigin="anonymous"></script>
+</body>
 </html>
