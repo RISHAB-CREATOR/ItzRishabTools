@@ -1,1 +1,11 @@
+# Prevent looping of 404 error document
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/404.html$
+    RewriteCond %{REQUEST_URI} !-f
+    RewriteCond %{REQUEST_URI} !-d
+    RewriteRule . /404.html [L]
+</IfModule>
+
+# Custom error document for 404 errors
 ErrorDocument 404 /404.html
