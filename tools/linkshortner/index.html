@@ -6,8 +6,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<title>RgLinkShortner</title>
+	<link rel="preload stylesheet" href="../../css/flash.css" as="style">
+	<link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+	<script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <script src="../../js/blockIP.js"></script>
+    <script src="../../js/logger.js"></script>
+    <script src="../../js/nocheats.js"></script>
+    <script src="../../js/smoothscroll.js"></script>
+    <script src="../../js/jquery.js"></script>
 	<link rel="icon" href="RG.png">
-	<title>Url Shortner by Rishab</title>
 </head>
 
 <body class="bg-gray-900">
@@ -36,7 +45,7 @@
 	<footer class="text-gray-400 bg-gray-900 body-font">
 		<div class="bg-gray-900 bg-opacity-90">
 			<div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-				<p class="text-gray-400 text-sm text-center sm:text-left">© 2022 Rishab —
+				<p class="text-gray-400 text-sm text-center sm:text-left">© 2024 Rishab —
 					<a href="https://youtube.com/c/itzrishabboss" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@ItzRishabBoss</a>
 				</p>
 				<span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-400 text-sm">Easy to use | Customized URLs | No Logs or History</span>
@@ -50,7 +59,12 @@
 		
 		var submitted = false;
 	</script>
-	<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='http://itzrishabtools.me/tools/linkshortner/shorted.html';}"></iframe>
+	<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='https://itzrishabtools.me/tools/linkshortner/shorted.html';}"></iframe>
 </body>
+<script>
+	new kursor({
+	  type: 1
+	})
+  </script>
 
 </html>
