@@ -1,5 +1,7 @@
 # ItzRishabTools
 
+MADE THIS THING WHEN I WAS IN MY SCHOOL YEARS , SO YEA I M NOT UPDATING THIS AT ALL KYS
+
 Welcome to ItzRishabTools, your one-stop destination for a variety of premium tools available for free! 🛠️✨
 
 ## About ❓
@@ -64,12 +66,12 @@ We are committed to providing you with a seamless experience. Expect regular upd
 
 ## How to Get Started ✨
 
-1. **Accessing Tools**: Visit our website [itzrishabtools.me](https://itzrishabtools.me) to explore and use the wide array of tools available.
+1. **Accessing Tools**: Visit our website [https://rishabnotfound.github.io/ItzRishabTools/](https://rishabnotfound.github.io/ItzRishabTools/) to explore and use the wide array of tools available.
 
 2. **Updates**: Follow us on social media for announcements and updates.
 
 ## Feedback 🤝
 
-We value your feedback! If you have suggestions or encounter any issues, feel free to reach out to us at [itzrishabboss@gmail.com](mailto:itzrishabboss@gmail.com).
+We value your feedback! If you have suggestions or encounter any issues, feel free to reach out to us at discord.
 
 Thank you for choosing ItzRishabTools. Enjoy exploring and utilizing our premium tools! 🚀🔧
