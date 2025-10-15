@@ -1,5 +1,7 @@
 # ItzRishabTools
 
+<img width="1420" height="937" alt="image" src="https://github.com/user-attachments/assets/c00b5fd5-a5e1-4702-b90b-9f0c95fb5b88" />
+
 MADE THIS THING WHEN I WAS IN MY SCHOOL YEARS , SO YEA I M NOT UPDATING THIS AT ALL KYS
 
 Welcome to ItzRishabTools, your one-stop destination for a variety of premium tools available for free! 🛠️✨
